@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IOTrek_TaskOne</title>
+	<style type="text/css">
+   #container{
+    margin-left: 35%;
+    margin-top: 20%;
+    width: 400px;
+    height: auto;
+    font-size: 30px;
+    padding-left: 10px;
+   }
+   </style>
+	<script type="text/Javascript">
+   function changeColor(color){
+	document.getElementsByTagName('Body')[0].style.backgroundColor = color.value;
+	}
+    </script>
+</head>
+<body>
+	<div id="container">
+	<select id="select" size='1' onchange="changeColor(this);">
+		<option value="none">Select Color</option>
+	</select>
+	<input type="text" id="val" placeholder="Add new color">
+	<button onclick="insertvalue();">Add Color</button>
+	</div>	
+		<script>
+		function insertvalue()
+		{
+			var select = document.getElementById("select"),
+				txtVal = document.getElementById("val").value,
+				newOption = document.createElement("OPTION"),
+				newOptionVal = document.createTextNode(txtVal);
+
+			newOption.appendChild(newOptionVal);
+			select.insertBefore(newOption, select.lastChild);
+		}
+	    </script>
+</body>
+</html>
